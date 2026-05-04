@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Scott's Floral Designs</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+</head>
+<body>
+    <!-- Mobile nav button -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    
+    <!-- Header with logo -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-left">
+                <img src="images/logo.png" alt="Scott's Designs" class="main-logo">
+            </div>
+            <div class="logo-right">
+                <img src="images/small-logo.png" alt="Logo" class="small-logo">
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="close-btn" id="menuClose">×</button>
+        <a href="index.html">Home</a>
+        <a href="page1.html">Flower Arrangements</a>
+        <a href="page2.html">Sympathy Arrangements</a>
+        <a href="page3.html">Weddings & Events</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="videos.html">Videos</a>
+        <a href="diy.html">DIY Ideas</a>
+        <a href="login.html" id="login-link">Login</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Gallery</h1>
+        <p>View All Our Floral Designs</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="gallery">
+            <a class="item" data-src="images/image1.jpg" role="button">
+                <img src="images/image1.jpg" alt="Floral Arrangement 1" loading="lazy">
+                <div class="image-description"><p data-editable-id="desc_gallery_1"><!-- editable:start id=desc_gallery_1 -->Beautiful mixed bouquet<!-- editable:end id=desc_gallery_1 --></p></div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+            <a class="item" data-src="images/image2.jpg" role="button">
+                <img src="images/image2.jpg" alt="Floral Arrangement 2" loading="lazy">
+                <div class="image-description"><p data-editable-id="desc_gallery_2"><!-- editable:start id=desc_gallery_2 -->Elegant white arrangement<!-- editable:end id=desc_gallery_2 --></p></div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+            <a class="item" data-src="images/image3.jpg" role="button">
+                <img src="images/image3.jpg" alt="Floral Arrangement 3" loading="lazy">
+                <div class="image-description"><p data-editable-id="desc_gallery_3"><!-- editable:start id=desc_gallery_3 -->Vibrant spring flowers<!-- editable:end id=desc_gallery_3 --></p></div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+            <a class="item" data-src="images/image4.jpg" role="button">
+                <img src="images/image4.jpg" alt="Floral Arrangement 4" loading="lazy">
+                <div class="image-description"><p data-editable-id="desc_gallery_4"><!-- editable:start id=desc_gallery_4 -->Garden-inspired design<!-- editable:end id=desc_gallery_4 --></p></div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+            <a class="item" data-src="images/image5.jpg" role="button">
+                <img src="images/image5.jpg" alt="Floral Arrangement 5" loading="lazy">
+                <div class="image-description"><p data-editable-id="desc_gallery_5"><!-- editable:start id=desc_gallery_5 -->Luxury celebration bouquet<!-- editable:end id=desc_gallery_5 --></p></div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+            <a class="item" data-src="images/image6.jpg" role="button">
+                <img src="images/image6.jpg" alt="Floral Arrangement 6" loading="lazy">
+                <div class="image-description"><p data-editable-id="desc_gallery_6"><!-- editable:start id=desc_gallery_6 -->Romantic rose arrangement<!-- editable:end id=desc_gallery_6 --></p></div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+            <a class="item" data-src="images/image7.jpg" role="button">
+                <img src="images/image7.jpg" alt="Floral Arrangement 7" loading="lazy">
+                <div class="image-description"><p data-editable-id="desc_gallery_7"><!-- editable:start id=desc_gallery_7 -->Seasonal favorite<!-- editable:end id=desc_gallery_7 --></p></div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+        </section>
+
+        <!-- Full page description section for admin -->
+        <section class="section page-description">
+            <p data-editable-id="page_description_gallery"><!-- editable:start id=page_description_gallery -->Welcome to our complete gallery! Here you can browse all of our beautiful floral arrangements and designs. Each arrangement is custom-made with care and attention to detail.<!-- editable:end id=page_description_gallery --></p>
+        </section>
+    </main>
+
+    <!-- Lightbox overlay -->
+    <div id="lightbox" class="lightbox" style="display:none;">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" src="" alt="">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Scott's Floral Designs. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+node_modules/
+.vscode/
+.vs/
+*.log
+.DS_Store
+.env
+.env.local
+.env.production

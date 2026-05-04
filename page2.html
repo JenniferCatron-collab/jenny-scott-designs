@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jenny Scott Designs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="assets/styles.css" as="style">
+    <link rel="preload" href="assets/site.js" as="script">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+  <!--HERO HEADER-->
+    <div class="hero">
+        <div class="hero-center"><span class="logo-fancy">Jenny Scott Designs</span></div>
+        <div class="hero-right"><span class="logo-small">Jenny Scott Designs</span></div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+
+    <div class="section intro intro-top">
+        <h2>Sympathy Arrangements</h2>
+        <p>Welcome — here you'll find a curated collection of my sympathy arrangements. Use the boxes below to add photos and short notes about each design. Click an image to open the full version (or replace the image source with your own file).</p>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="close-btn" id="menuClose">×</button>
+        <a href="index.html">Home</a>
+        <a href="page1.html">Flower Arrangements</a>
+        <a href="page2.html">Sympathy Arrangements</a>
+        <a href="page3.html">Weddings &amp; Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="videos.html">Videos</a>
+        <a href="diy.html">DIY Video's</a>
+    </nav>
+
+    <!-- Decorative gallery of image boxes -->
+    <div class="section">
+        <div class="gallery no-download">
+            <a class="item" data-src="images/AKYA7989.JPG" role="button">
+                <img src="images/AKYA7989.JPG" alt="Arrangement 1" draggable="false" loading="lazy">
+                <div class="image-description">
+                  <!-- editable:start id=desc_p2_1 -->
+                  <p data-editable-id="desc_p2_1">Soft white</p>
+                  <!-- editable:end id=desc_p2_1 -->
+                </div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+            <a class="item" data-src="images/EPCT1670.JPG" role="button">
+                <img src="images/EPCT1670.JPG" alt="Arrangement 2" draggable="false" loading="lazy">
+                <div class="image-description">
+                  <!-- editable:start id=desc_p2_2 -->
+                  <p data-editable-id="desc_p2_2">Peaceful tribute</p>
+                  <!-- editable:end id=desc_p2_2 -->
+                </div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+            <a class="item" data-src="images/OKEM0725.JPG" role="button">
+                <img src="images/OKEM0725.JPG" alt="Arrangement 3" draggable="false" loading="lazy">
+                <div class="image-description">
+                  <!-- editable:start id=desc_p2_3 -->
+                  <p data-editable-id="desc_p2_3">Garden farewell</p>
+                  <!-- editable:end id=desc_p2_3 -->
+                </div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+            <a class="item" data-src="images/AKYA7989.JPG" role="button">
+                <img src="images/AKYA7989.JPG" alt="Arrangement 4" draggable="false" loading="lazy">
+                <div class="image-description">
+                  <!-- editable:start id=desc_p2_4 -->
+                  <p data-editable-id="desc_p2_4">Dignified memorial</p>
+                  <!-- editable:end id=desc_p2_4 -->
+                </div>
+                <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
+            </a>
+        </div>
+    </div>
+
+<div class="section page-description">
+  <!-- editable:start id=page_description_2 -->
+  <p data-editable-id="page_description_2">Write your descriptions or additional information here. This section is visible to all visitors but only you can edit it as an administrator.</p>
+  <!-- editable:end id=page_description_2 -->
+</div>
+
+<footer>
+    <p><strong>Jenny Scott</strong></p>
+    <p>Email: <a href="mailto:jennyscott@jennyscottdesigns.com">jennyscott@jennyscottdesigns.com</a></p>
+    <p style="margin-top:10px; font-size:13px; color:#666">© 2026 Jenny Scott. All rights reserved. &nbsp; <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a> · <a href="/login.html">Login</a> · <a href="/logout">Logout</a></p>
+    </footer>
+
+<!-- lightbox overlay (prevents direct image linking and disables right-click) -->
+<div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); align-items:center; justify-content:center; z-index:1200;">
+    <button id="lightboxClose" style="position:absolute; top:18px; right:18px; font-size:28px; background:none; color:#fff; border:none; cursor:pointer">×</button>
+    <div id="lightboxInner" style="max-width:92%; max-height:88%; background-size:contain; background-position:center; background-repeat:no-repeat;
+             width:80vw; height:80vh; box-shadow:0 10px 40px rgba(0,0,0,0.6); border-radius:8px;">
+    </div>
+</div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

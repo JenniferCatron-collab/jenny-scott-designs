@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Editor — Jenny Scott</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>body{padding:18px;font-family:Arial,Helvetica,sans-serif} .file-list{max-width:300px;float:left;margin-right:18px} .editor{overflow:hidden} textarea{width:100%;height:70vh;font-family:monospace;font-size:13px;padding:8px}</style>
+</head>
+<body>
+  <button class="menu-toggle" id="menuToggle">☰</button>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="close-btn" id="menuClose">×</button>
+    <a href="index.html">Home</a>
+    <a href="page1.html">Flower Arrangements</a>
+    <a href="page2.html">Sympathy Arrangements</a>
+    <a href="page3.html">Weddings &amp; Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="diy.html">DIY Video's</a>
+  </nav>
+  <h2>Admin Editor</h2>
+  <p><a href="/">Visit site</a> · <a href="/logout">Logout</a></p>
+  <div style="display:flex;gap:16px;align-items:flex-start">
+    <div class="file-list">
+      <h4>Files</h4>
+      <div id="files"></div>
+    </div>
+    <div class="editor" style="flex:1">
+      <h4 id="editing">Select a file</h4>
+      <div><textarea id="fileContent" placeholder="Select a file to edit"></textarea></div>
+      <div style="margin-top:8px"><button id="saveFile">Save</button> <button id="revertFile">Revert</button></div>
+      <div id="status" style="margin-top:8px;color:green"></div>
+    </div>
+  </div>
+<script>
+function api(path, opts){ return fetch(path, opts).then(r=>r.json()); }
+api('/admin/files').then(function(j){ if(j && j.files){ const list=document.getElementById('files'); j.files.forEach(function(f){ var el=document.createElement('div'); el.style.margin='6px 0'; var a=document.createElement('a'); a.href='#'; a.textContent=f; a.addEventListener('click', function(ev){ ev.preventDefault(); loadFile(f); }); el.appendChild(a); list.appendChild(el); }); }}).catch(function(){ alert('Not authorized or server not running. Login first at /login.html'); window.location='/login.html'; });
+var currentPath=null, original='';
+function loadFile(p){ api('/admin/file?path='+encodeURIComponent(p)).then(function(j){ if(j && j.content!==undefined){ currentPath=p; document.getElementById('editing').textContent=p; document.getElementById('fileContent').value=j.content; original=j.content; document.getElementById('status').textContent=''; } else alert('Error loading file'); }); }
+document.getElementById('saveFile').addEventListener('click', function(){ if(!currentPath) return alert('Pick a file'); var content=document.getElementById('fileContent').value; fetch('/admin/save',{method:'POST',body:JSON.stringify({path:currentPath,content:content}),headers:{'Content-Type':'application/json'}}).then(r=>r.json()).then(function(j){ if(j && j.ok){ original=content; document.getElementById('status').textContent='Saved.' }else alert('Save error: '+(j&&j.error)); }).catch(e=>alert('Save failed')) });
+document.getElementById('revertFile').addEventListener('click', function(){ if(!currentPath) return; document.getElementById('fileContent').value=original; document.getElementById('status').textContent='Reverted'; });
+</script>
+</body>
+</html>
