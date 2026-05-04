@@ -83,6 +83,9 @@
     }).catch(function(err) {
       console.error('Login error:', err);
       errorDiv.innerHTML = '<p style=\"color:red;\">Login error - please try again</p>';
+    });
+  }
+  
   fetch('/auth-status', {credentials: 'same-origin'}).then(function(r){return r.json()}).then(function(j){ if(j && j.authenticated){ document.body.classList.add('can-upload'); } }).catch(function(){});
   document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG'||e.target.id==='lightboxInner')e.preventDefault()});
   document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault()});
