@@ -228,12 +228,20 @@
     enableInlineEditing();
     initLoginModal();
     // Menu toggle
+    console.log('Menu toggle script loaded');
     var menuToggle = document.getElementById('menuToggle');
     var mobileNav = document.getElementById('mobileNav');
+    console.log('menuToggle element:', menuToggle);
+    console.log('mobileNav element:', mobileNav);
     if(menuToggle && mobileNav){
+      console.log('Adding click listener to menu toggle');
       menuToggle.addEventListener('click', function(){
+        console.log('Menu toggle clicked');
         mobileNav.classList.toggle('open');
+        console.log('Mobile nav classes:', mobileNav.className);
       });
+    } else {
+      console.log('Menu toggle or mobile nav not found');
     }
     var menuClose = document.getElementById('menuClose');
     if(menuClose){
