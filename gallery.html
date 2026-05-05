@@ -1,34 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
+    <title>Gallery - Jenny Scott Designs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Scott's Floral Designs</title>
     <link rel="stylesheet" href="assets/styles.css">
-    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <script defer src="assets/site.js"></script>
 </head>
+
 <body>
-    <nav class="mobile-nav" id="mobileNav">
-        <button class="close-btn" id="menuClose">×</button>
+
+    <!-- HERO HEADER -->
+    <div class="hero">
+        <div class="hero-center">
+            <span class="logo-fancy">Jenny Scott Designs</span>
+        </div>
+    </div>
+
+    <!-- UNIVERSAL DESKTOP NAV -->
+    <nav class="desktop-nav">
         <a href="index.html">Home</a>
         <a href="page1.html">Flower Arrangements</a>
         <a href="page2.html">Sympathy Arrangements</a>
         <a href="page3.html">Weddings & Events</a>
-        <a href="gallery.html" class="active">Gallery</a>
+        <a href="gallery.html">Gallery</a>
         <a href="videos.html">Videos</a>
-        <a href="diy.html">DIY Ideas</a>
-        <a href="login.html" id="login-link">Login</a>
+        <a href="diy.html">DIY Video's</a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-center"><span class="hero-text">Gallery</span></div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
+    <!-- PAGE CONTENT -->
+    <div class="section">
+        <h2>Gallery</h2>
         <p>View All Our Floral Designs</p>
-    </section>
 
-    <!-- Main Content -->
-    <main class="container">
         <section class="gallery">
             <a class="item" data-src="images/image1.jpg" role="button">
                 <img src="images/image1.jpg" alt="Floral Arrangement 1" loading="lazy">
@@ -71,7 +75,7 @@
         <section class="section page-description">
             <p data-editable-id="page_description_gallery"><!-- editable:start id=page_description_gallery -->Welcome to our complete gallery! Here you can browse all of our beautiful floral arrangements and designs. Each arrangement is custom-made with care and attention to detail.<!-- editable:end id=page_description_gallery --></p>
         </section>
-    </main>
+    </div>
 
     <!-- Lightbox overlay -->
     <div id="lightbox" class="lightbox" style="display:none;">
@@ -79,13 +83,11 @@
         <img class="lightbox-content" src="" alt="">
     </div>
 
-    <!-- Footer -->
     <footer>
         <p><strong>Jenny Scott</strong></p>
         <p>Email: <a href="mailto:jennyscott@jennyscottdesigns.com">jennyscott@jennyscottdesigns.com</a></p>
         <p style="margin-top:10px; font-size:13px; color:#666">© 2026 Jenny Scott. All rights reserved. &nbsp; <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a> · <a href="/login.html">Login</a> · <a href="/logout">Logout</a></p>
     </footer>
 
-    <script src="assets/site.js"></script>
 </body>
 </html>
