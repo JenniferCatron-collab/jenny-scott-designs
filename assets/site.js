@@ -87,6 +87,10 @@
   }
   
   fetch('/auth-status', {credentials: 'same-origin'}).then(function(r){return r.json()}).then(function(j){ if(j && j.authenticated){ document.body.classList.add('can-upload'); } }).catch(function(){});
+  // Initialize lightbox variables
+  var lightbox = document.getElementById('lightbox');
+  var lbInner = lightbox ? document.getElementById('lightboxInner') : null;
+  var lbClose = lightbox ? document.getElementById('lightboxClose') : null;
   document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG'||e.target.id==='lightboxInner')e.preventDefault()});
   document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault()});
   // open lightbox when clicking gallery item (uses data-src)
