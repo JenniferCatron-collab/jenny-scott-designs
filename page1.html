@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Flower Arrangements - Jenny Scott Designs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flower arrangements by Jenny Scott — centerpieces, bouquets, and seasonal designs.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#e06a6a">
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Jenny Scott Designs">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Flower Arrangements - Jenny Scott Designs">
+    <meta property="og:description" content="Flower arrangements, centerpieces, and bouquets by Jenny Scott.">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="assets/styles.css">
     <script defer src="assets/site.js"></script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <!-- HERO HEADER -->
     <div class="hero">
@@ -18,27 +28,27 @@
     </div>
 
     <!-- UNIVERSAL DESKTOP NAV -->
-    <nav class="desktop-nav">
+    <nav class="desktop-nav" role="navigation" aria-label="Main site navigation">
         <a href="index.html">Home</a>
         <a href="page1.html">Flower Arrangements</a>
         <a href="page2.html">Sympathy Arrangements</a>
-        <a href="page3.html">Weddings & Events</a>
+        <a href="page3.html">Weddings &amp; Events</a>
         <a href="gallery.html">Gallery</a>
         <a href="videos.html">Videos</a>
-        <a href="diy.html">DIY Video's</a>
+        <a href="diy.html">DIY Videos</a>
     </nav>
 
     <!-- PAGE CONTENT -->
-    <div class="section intro intro-top">
-        <h2>Flower Arrangements</h2>
-        <p>Welcome — here you'll find a curated collection of my flower arrangements. Use the boxes below to add photos and short notes about each design. Click an image to open the full version (or replace the image source with your own file).</p>
-    </div>
+    <main id="main-content" class="section intro intro-top">
+        <h1>Flower Arrangements</h1>
+        <p>Welcome — here you'll find a curated collection of my flower arrangements. Use the boxes below to add photos and short notes about each design. Click an image to open the full version.</p>
+    </main>
 
     <!-- Decorative gallery of image boxes -->
     <div class="section">
         <div class="gallery no-download">
             <a class="item" data-src="images/AKYA7989.JPG" role="button">
-                <img src="images/AKYA7989.JPG" alt="Arrangement 1" draggable="false" loading="lazy">
+                <img src="images/AKYA7989.JPG" alt="Spring centerpiece" draggable="false" loading="lazy">
                 <div class="image-description">
                   <!-- editable:start id=desc_p1_1 -->
                   <p data-editable-id="desc_p1_1">Spring centerpiece</p>
@@ -47,7 +57,7 @@
                 <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
             </a>
             <a class="item" data-src="images/EPCT1670.JPG" role="button">
-                <img src="images/EPCT1670.JPG" alt="Arrangement 2" draggable="false" loading="lazy">
+                <img src="images/EPCT1670.JPG" alt="Elegant bouquet" draggable="false" loading="lazy">
                 <div class="image-description">
                   <!-- editable:start id=desc_p1_2 -->
                   <p data-editable-id="desc_p1_2">Elegant bouquet</p>
@@ -56,7 +66,7 @@
                 <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
             </a>
             <a class="item" data-src="images/OKEM0725.JPG" role="button">
-                <img src="images/OKEM0725.JPG" alt="Arrangement 3" draggable="false" loading="lazy">
+                <img src="images/OKEM0725.JPG" alt="Table arrangement" draggable="false" loading="lazy">
                 <div class="image-description">
                   <!-- editable:start id=desc_p1_3 -->
                   <p data-editable-id="desc_p1_3">Table arrangement</p>
@@ -65,7 +75,7 @@
                 <div class="upload-wrap"><button class="upload-btn">Upload</button><input class="uploader" type="file" accept="image/*" style="display:none"></div>
             </a>
             <a class="item" data-src="images/AKYA7989.JPG" role="button">
-                <img src="images/AKYA7989.JPG" alt="Arrangement 4" draggable="false" loading="lazy">
+                <img src="images/AKYA7989.JPG" alt="Garden style" draggable="false" loading="lazy">
                 <div class="image-description">
                   <!-- editable:start id=desc_p1_4 -->
                   <p data-editable-id="desc_p1_4">Garden style</p>
@@ -76,11 +86,11 @@
         </div>
     </div>
 
-<div class="section page-description">
-  <!-- editable:start id=page_description_1 -->
-  <p data-editable-id="page_description_1">Write your descriptions or additional information here. This section is visible to all visitors but only you can edit it as an administrator.</p>
-  <!-- editable:end id=page_description_1 -->
-</div>
+    <div class="section page-description">
+      <!-- editable:start id=page_description_1 -->
+      <p data-editable-id="page_description_1">Write your descriptions or additional information here. This section is visible to all visitors but only you can edit it as an administrator.</p>
+      <!-- editable:end id=page_description_1 -->
+    </div>
 
     <footer>
         <p><strong>Jenny Scott</strong></p>
