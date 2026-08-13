@@ -1,22 +1,3 @@
-const menuToggle = document.getElementById("menuToggle");
-const mobileNav = document.getElementById("mobileNav");
-const menuClose = document.getElementById("menuClose");
-
-// Only attach mobile menu listeners when those elements exist. The universal
-// template removed the mobile nav from pages, which caused addEventListener on
-// null and stopped the rest of the script from running.
-if (menuToggle && mobileNav) {
-  menuToggle.addEventListener("click", function() {
-    mobileNav.classList.add("open");
-  });
-}
-
-if (menuClose && mobileNav) {
-  menuClose.addEventListener("click", function() {
-    mobileNav.classList.remove("open");
-  });
-}
-
 // Login modal functionality
 (function(){
   var loginModal = null, loginInput = null, loginBtn = null, closeBtn = null;
