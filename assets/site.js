@@ -1,17 +1,17 @@
+// assets/site.js — mobile nav code removed; login modal will only be wired up
+// if a #loginModal element exists in the page HTML. This avoids injecting
+// UI from JS and keeps behavior consistent with a universal page template.
+
 // Login modal functionality
 (function(){
   var loginModal = null, loginInput = null, loginBtn = null, closeBtn = null;
 
   function initLoginModal() {
-    if (!document.getElementById('loginModal')) {
-      var modal = document.createElement('div');
-      modal.id = 'loginModal';
-      modal.className = 'login-modal';
-      modal.innerHTML = '<div class="login-modal-content"><div class="login-modal-header"><h2>Sign in to Upload</h2><button class="login-modal-close">&times;</button></div><form id="loginForm"><input id="loginPassword" type="password" placeholder="Password"><div id="loginError" style="margin-top:8px;color:#c33"></div><div style="margin-top:8px;"><button type="submit">Sign in</button></div></form></div>';
-      document.body.appendChild(modal);
-    }
-
+    // Do NOT auto-create the modal. Expect the page HTML to include it when
+    // desired. This keeps markup and accessibility under template control.
     loginModal = document.getElementById('loginModal');
+    if (!loginModal) return; // nothing to wire up on pages without a modal
+
     loginInput = document.getElementById('loginPassword');
     loginBtn = document.getElementById('loginForm');
     closeBtn = loginModal.querySelector('.login-modal-close');
@@ -26,6 +26,7 @@
       submitLogin();
     });
 
+    // Only hijack login links if a modal exists on the page
     document.querySelectorAll('a[href="/login.html"], a[href="login.html"]').forEach(function(link) {
       link.href = '#';
       link.addEventListener('click', function(e) {
@@ -79,6 +80,7 @@
     });
   }
 
+  // Populate upload permission state if available
   fetch('/auth-status', {credentials: 'same-origin'}).then(function(r){return r.json()}).then(function(j){ if(j && j.authenticated){ document.body.classList.add('can-upload'); } }).catch(function(){ /* ignore */ });
 
   // Upload functionality
@@ -88,7 +90,18 @@
     var img=input.closest('a')&&input.closest('a').querySelector('img');
     input.addEventListener('change',function(){
       var f=this.files&&this.files[0]; if(!f) return; if(btn){btn.textContent='Uploading...';btn.disabled=true;}
-      sendFile(f).then(function(res){if(res&&res.file){if(img) img.src=res.file+'?t='+Date.now(); var parent=input.closest('a'); parent&&parent.setAttribute('data-src',res.file);}else alert('Upload failed'); if(btn){btn.textContent='Upload';btn.disabled=false;}}).catch(function(){ alert('Upload failed'); if(btn){btn.textContent='Upload';btn.disabled=false;} });
+      sendFile(f).then(function(res){
+        if(res&&res.file){
+          if(img) img.src=res.file+'?t='+Date.now();
+          var parent=input.closest('a'); parent&&parent.setAttribute('data-src',res.file);
+        } else {
+          alert('Upload failed');
+        }
+        if(btn){btn.textContent='Upload';btn.disabled=false;}
+      }).catch(function(){
+        alert('Upload failed');
+        if(btn){btn.textContent='Upload';btn.disabled=false;}
+      });
     });
     if(btn){btn.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();input.click()});}
   });
